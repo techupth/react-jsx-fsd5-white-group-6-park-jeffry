@@ -12,26 +12,46 @@ function getCurrentDateTime() {
 }
 
 function IntroSection() {
+  const articleStyles = {
+    container: "article",
+    title: "article-title",
+    body: "article-body",
+    link: "article-link",
+  };
   return (
-    <div>
-      <h3>TechUp Thailand</h3>
-      <p>เตรียมพบกับหลักสูตรปั้นคุณเป็น Software Developer ภายใน 4 เดือน</p>
-      <a href="https://www.techupth.com/" target="blank">
+    <div className={articleStyles.container}>
+      <h3 className={articleStyles.title}>TechUp Thailand</h3>
+      <p className={articleStyles.body}>
+        เตรียมพบกับหลักสูตรปั้นคุณเป็น Software Developer ภายใน 4 เดือน
+      </p>
+      <a
+        className={articleStyles.link}
+        href="https://www.techupth.com/"
+        target="blank"
+      >
         techupth.com
       </a>
-      {/* ให้แสดงวันเวลาด้วย Function `getCurrentDateTime` ที่กำหนดไว้ให้ */}
+      <div className="bootcamp-start-time">
+        วันเวลาเริ่มหลักสูตร คือ {getCurrentDateTime()}
+      </div>
     </div>
   );
 }
 
 function LoginForm() {
+  const articleStyles = {
+    container: "login-container",
+    form: "login-form",
+    id_username: "username",
+    id_password: "password",
+  };
   return (
-    <div class="login-container">
-      <form class="login-form">
+    <div className={articleStyles.container}>
+      <form className={articleStyles.form}>
         <h2>Login</h2>
-        <label for="username">Username</label>
+        <label htmlFor={articleStyles.id_username}>Username</label>
         <input type="text" id="username" name="username" />
-        <label for="password">Password</label>
+        <label htmlFor={articleStyles.id_password}>Password</label>
         <input type="password" id="password" name="password" />
         <button type="submit">Login</button>
       </form>
